@@ -14,8 +14,8 @@ public class PhotoUseCase implements IPhotoServicePort {
     }
 
     @Override
-    public void savePhoto(Photo Photo) {
-        photoPersistencePort.savePhoto(Photo);
+    public Photo savePhoto(Photo photo) {
+        return photoPersistencePort.savePhoto(photo);
     }
 
     @Override
@@ -24,8 +24,8 @@ public class PhotoUseCase implements IPhotoServicePort {
     }
 
     @Override
-    public Photo getPhoto(Long PhotoNumber) {
-        return photoPersistencePort.getPhoto(PhotoNumber);
+    public Photo getPhoto(String photoNumber) {
+        return photoPersistencePort.getPhoto(photoNumber);
     }
 
     @Override
@@ -34,7 +34,7 @@ public class PhotoUseCase implements IPhotoServicePort {
     }
 
     @Override
-    public void deletePhoto(Long PhotoNumber) {
-        photoPersistencePort.deletePhoto(PhotoNumber);
+    public void deletePhoto(String photoNumber) {
+        photoPersistencePort.deletePhoto(photoNumber);
     }
 }

@@ -5,9 +5,9 @@ import com.pd.Pokedex.domain.model.Photo;
 import java.util.List;
 
 public interface IPhotoServicePort {
-    void savePhoto(Photo Photo);
+    Photo savePhoto(Photo photo);
     List<Photo> getAllPhoto();
-    Photo getPhoto(Long PhotoNumber);
+    Photo getPhoto(String photoNumber);
     void updatePhoto(Photo Photo);
-    void deletePhoto(Long PhotoNumber);
+    void deletePhoto(String photoNumber);
 }
