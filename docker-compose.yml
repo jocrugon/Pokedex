@@ -1,0 +1,16 @@
+version: '3'
+services:
+  ### MySQL database
+  db-orders:
+    container_name: db-pokedex
+    image: mysql:8.0.33
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: pokedex
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - 3308:3306
+    expose:
+      - 3308
