@@ -15,8 +15,8 @@ import java.util.List;
 
 public class TypeJpaAdapter implements ITypePersistencePort {
 
-    private final TypeEntityMapper typeEntityMapper;
     private final ITypeRepository typeRepository;
+    private final TypeEntityMapper typeEntityMapper;
 
     @Override
     public Type saveType(Type type) {

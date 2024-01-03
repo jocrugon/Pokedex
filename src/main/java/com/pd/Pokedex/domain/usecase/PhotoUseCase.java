@@ -19,8 +19,8 @@ public class PhotoUseCase implements IPhotoServicePort {
     }
 
     @Override
-    public List<Photo> getAllPhoto() {
-        return photoPersistencePort.getAllPhoto();
+    public List<Photo> getAllPhotos() {
+        return photoPersistencePort.getAllPhotos();
     }
 
     @Override

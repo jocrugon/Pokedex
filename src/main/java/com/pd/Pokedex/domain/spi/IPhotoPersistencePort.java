@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IPhotoPersistencePort {
     Photo savePhoto(Photo photo);
-    List<Photo> getAllPhoto();
+    List<Photo> getAllPhotos();
     Photo getPhoto(String photoNumber);
     void updatePhoto(Photo photo);
     void deletePhoto(String photoNumber);

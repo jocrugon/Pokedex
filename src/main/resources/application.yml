@@ -1,0 +1,27 @@
+server:
+  port: 8090
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3308/pokedex
+    username: user
+    password: password
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: pokedex
+
+appDescription: "Pokedex API"
+appVersion: "1.0.0"
+
+#swagger
+
+springdoc:
+  swagger-ui:
+    path: /index.html

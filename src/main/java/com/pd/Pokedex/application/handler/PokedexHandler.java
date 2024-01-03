@@ -39,7 +39,7 @@ public class PokedexHandler implements IPokedexHandler{
 
     @Override
     public List<PokedexResponse> getAllPokemonFromPokedex() {
-        return pokedexResponseMapper.toResponseList(pokemonServicePort.getAllPokemon(),typeServicePort.getAllType(),photoServicePort.getAllPhoto());
+        return pokedexResponseMapper.toResponseList(pokemonServicePort.getAllPokemon(),typeServicePort.getAllType(),photoServicePort.getAllPhotos());
     }
 
     @Override
