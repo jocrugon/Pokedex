@@ -12,7 +12,7 @@ services:
       MYSQL_ROOT_PASSWORD: root
     ports:
       - 3310:3306
-      ### MongoDB database
+  ### MongoDB database
   mongodb-pokedex:
     container_name: mongodb-pokedex
     image: mongo:latest
@@ -24,9 +24,7 @@ services:
   ### Spring Boot application
   spring-app:
     container_name: spring-app
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: dacrugon22/pokedex:latest
     ports:
       - 8091:8091
     environment:
