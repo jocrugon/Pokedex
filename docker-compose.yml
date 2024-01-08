@@ -1,21 +1,19 @@
 version: '3'
 services:
   ### MySQL database
-  db-mysql:
+  db-pokedex:
     container_name: db-pokedex
     image: mysql:latest
     restart: unless-stopped
     environment:
       MYSQL_DATABASE: pokedex
       MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      MYSQL_PASSWORD: user
       MYSQL_ROOT_PASSWORD: root
     ports:
-      - 3308:3306
-    expose:
-      - 3308
-  ### MongoDB database
-  db-mongodb:
+      - 3310:3306
+      ### MongoDB database
+  mongodb-pokedex:
     container_name: mongodb-pokedex
     image: mongo:latest
     restart: unless-stopped
@@ -23,3 +21,21 @@ services:
       MONGO_INITDB_DATABASE: pokedex
     ports:
       - 27017:27017
+  ### Spring Boot application
+  spring-app:
+    container_name: spring-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8091:8091
+    environment:
+      MYSQL_URL: jdbc:mysql://db-pokedex:3306/pokedex
+      MYSQL_USERNAME: user
+      MYSQL_PASSWORD: user
+      MONGO_HOST: mongodb-pokedex
+      MONGO_PORT: 27017
+      MONGO_DATABASE: pokedex
+    depends_on:
+      - db-pokedex
+      - mongodb-pokedex
