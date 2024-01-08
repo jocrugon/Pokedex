@@ -9,3 +9,8 @@ las bases de datos están en el archivo docker-compose, también la creación de
 - Arquitectura Hexagonal
 
 ![imagen](https://github.com/jocrugon/Pokedex/assets/93726141/b692b471-88d9-43e6-9a75-4e8732a4cf4e)
+
+- Docker
+
+![imagen](https://github.com/jocrugon/Pokedex/assets/93726141/49cfcd81-be7a-4594-88db-892525dd5bd2)
+
